@@ -1,20 +1,29 @@
 def f(n: int) -> str:
     """
-    Returns a string of n asterisks separated by a slash ('/').
+    Zwraca ciąg gwiazdek oddzielonych ukośnikami.
 
-    Args:
-        n (int): The number of asterisks to include.
+    Argumenty:
+        n (int): Liczba gwiazdek.
 
-    Returns:
-        str: A string of n asterisks separated by a slash.
+    Zwraca:
+        str: Ciąg gwiazdek.
     """
+    # Jeśli n <= 0, zwracamy pusty ciąg znaków (nie ma gwiazdek do wyświetlenia)
     if n <= 0:
-        return ""  # Return an empty string if n is less than or equal to 0
-    return "/*" * (n - 1) + "*" if n > 0 else ""
+        return ""
+    
+    # Tworzymy ciąg gwiazdek oddzielonych ukośnikami
+    # Przykład: dla n=4: "*/*/*/*"
+    return "*/" * (n - 1) + "*"
 
-# Test cases
-print(f(4))  # Expected output: "*/*/*/*"
-print(f(1))  # Expected output: "*"
-print(f(0))  # Expected output: ""
-print(f(-3)) # Expected output: ""
-print(f(6))  # Expected output: "*/*/*/*/*/*"
+def main():
+    print(f(4))  #wynik: "*/*/*/*"
+    print(f(1))  #wynik: "*"
+    print(f(0))  #wynik: ""
+
+# Sprawdzamy, czy uruchamiamy plik jako główny skrypt
+if __name__ == "__main__":
+    main()
+
+
+

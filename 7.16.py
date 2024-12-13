@@ -1,23 +1,28 @@
 def f(n: int) -> int:
     """
-    Returns the n-th value of the Fibonacci sequence.
+    Zwraca n-tą liczbę w ciągu Fibonacciego.
 
-    Args:
-        n (int): The position of the Fibonacci number to return.
+    Argumenty:
+        n (int): Pozycja liczby Fibonacciego do zwrócenia.
 
-    Returns:
-        int: The n-th Fibonacci number.
+    Zwraca:
+        int: n-ta liczba Fibonacciego.
     """
     if n == 1:
-        return 0  # First Fibonacci number
+        return 0  # Pierwsza liczba Fibonacciego
     elif n == 2:
-        return 1  # Second Fibonacci number
+        return 1  # Druga liczba Fibonacciego
 
-    a, b = 0, 1  # Starting values for the first two numbers
+    a, b = 0, 1  # Początkowe wartości dla pierwszych dwóch liczb
     for _ in range(3, n + 1):
-        a, b = b, a + b  # Update a and b to the next pair of Fibonacci numbers
+        a, b = b, a + b  # Aktualizujemy a i b, aby uzyskać kolejną parę liczb Fibonacciego
 
     return b
 
-print(f(5))  # Expected output: 3
-print(f(9))  # Expected output: 21
+def main():
+    print(f(5))  # wynik: 3
+    print(f(9))  # wynik: 21
+
+# Sprawdzamy, czy skrypt jest uruchamiany jako główny program
+if __name__ == "__main__":
+    main()

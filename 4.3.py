@@ -1,6 +1,17 @@
 import math
-
 def triangle_area(a, b, c):
+    """
+    Funkcja oblicza pole trójkąta na podstawie długości jego boków
+    za pomocą wzoru Herona.
+
+    Argumenty:
+    a (float): Długość pierwszego boku trójkąta
+    b (float): Długość drugiego boku trójkąta
+    c (float): Długość trzeciego boku trójkąta
+
+    Zwraca:
+    float: Pole trójkąta
+    """
     s = (a + b + c) / 2
     area = math.sqrt(s * (s - a) * (s - b) * (s - c))
     return area

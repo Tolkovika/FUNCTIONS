@@ -1,18 +1,23 @@
 def f(name: str) -> str:
     """
-    Returns the acronym formed by the first letters of each word in the input text.
+    Zwraca akronim utworzony z pierwszych liter każdego słowa w podanym tekście.
 
-    Args:
-        name (str): The input text to form the acronym from.
+    Argumenty:
+        name (str): Tekst, z którego mają zostać utworzone litery akronimu.
 
-    Returns:
-        str: The acronym formed by the first letters of each word.
+    Zwraca:
+        str: Akronim utworzony z pierwszych liter każdego słowa.
     """
-    # Split the name into words and get the first letter of each word, then join them
+    # dzielimy tekst na słowa, bierzemy pierwszą literę z każdego słowa, a następnie łączymy je w jeden ciąg
     acronym = ''.join(word[0].upper() for word in name.split() if word)
 
     return acronym
 
-print(f("Internet of Things"))  # Expected output: "IoT"
-print(f("For Your Information"))  # Expected output: "FYI"
-print(f("Python"))  # Expected output: "P"
+def main():
+    print(f("Internet of Things"))  # wynik: "IoT"
+    print(f("For Your Information"))  # wynik: "FYI"
+    print(f("Python"))  # wynik: "P"
+
+# Sprawdzamy, czy skrypt jest uruchamiany jako główny program
+if __name__ == "__main__":
+    main()

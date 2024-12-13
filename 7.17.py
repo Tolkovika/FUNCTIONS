@@ -1,20 +1,24 @@
 def f(palindrome: str) -> bool:
     """
-    Returns True if the given string is a palindrome, False otherwise.
+    Zwraca True, jeśli podany ciąg jest palindromem, w przeciwnym razie False.
 
-    Args:
-        palindrome (str): The string to check for palindrome.
+    Argumenty:
+        palindrome (str): Ciąg znaków do sprawdzenia, czy jest palindromem.
 
-    Returns:
-        bool: True if the string is a palindrome, False otherwise.
+    Zwraca:
+        bool: True, jeśli ciąg jest palindromem, False w przeciwnym razie.
     """
-    # Remove non-alphanumeric characters and convert to lowercase
+    # Usuwamy wszystkie znaki niealfanumeryczne i konwertujemy na małe litery
     cleaned_str = ''.join(char.lower() for char in palindrome if char.isalnum())
 
-    # Check if the string is equal to its reverse
+    # Sprawdzamy, czy ciąg jest równy swojemu odwróconemu odpowiednikowi
     return cleaned_str == cleaned_str[::-1]
 
+def main():
+    print(f("radar"))      # wynik: True
+    print(f("12-11-21"))   # wynik: True
+    print(f("book"))       # wynik: False
 
-print(f("radar"))      # Expected output: True
-print(f("12-11-21"))   # Expected output: True
-print(f("book"))       # Expected output: False
+# Sprawdzamy, czy skrypt jest uruchamiany jako główny program
+if __name__ == "__main__":
+    main()

@@ -1,32 +1,38 @@
 def f(number: int, even: bool) -> int:
     """
-    Computes the sum of the digits of a number, filtering by even or odd digits.
+    Funkcja oblicza sumę cyfr liczby, wybierając tylko cyfry parzyste lub nieparzyste.
 
-    Args:
-        number (int): The number whose digits will be summed.
-        even (bool): If True, sum only even digits; if False, sum only odd digits.
+    Argumenty:
+        number (int): Liczba, z której sumujemy cyfry.
+        even (bool): Jeśli True, sumujemy tylko cyfry parzyste; jeśli False, sumujemy tylko cyfry nieparzyste.
 
-    Returns:
-        int: The sum of the filtered digits.
+    Zwraca:
+        int: Suma przefiltrowanych cyfr.
     """
+    # Sprawdzamy, czy liczba nie jest ujemna
     if number < 0:
-        raise ValueError("Number must be a non-negative integer.")
+        raise ValueError("Liczba musi być liczbą nieujemną.")
 
-    # Convert the number to a string to iterate over its digits
+    # Przekształcamy liczbę na listę cyfr, żeby łatwiej było je przetwarzać
     digits = [int(digit) for digit in str(number)]
 
-    # Filter digits based on the `even` parameter
+    # Filtrujemy cyfry - parzyste lub nieparzyste
     if even:
-        filtered_digits = [digit for digit in digits if digit % 2 == 0]
+        filtered_digits = [digit for digit in digits if digit % 2 == 0]  # Cyfry parzyste
     else:
-        filtered_digits = [digit for digit in digits if digit % 2 != 0]
+        filtered_digits = [digit for digit in digits if digit % 2 != 0]  # Cyfry nieparzyste
 
-    # Return the sum of the filtered digits
+    # Zwracamy sumę wybranych cyfr
     return sum(filtered_digits)
 
-# Test cases
-print(f(3124, True))   # Expected output: 6 (3 + 1 + 2 + 4 -> 2 + 4 = 6)
-print(f(3124, False))  # Expected output: 4 (3 + 1 + 2 + 4 -> 3 + 1 = 4)
-print(f(20576, False)) # Expected output: 12 (2 + 0 + 5 + 7 + 6 -> 5 + 7 = 12)
-print(f(20576, True))  # Expected output: 8 (2 + 0 + 5 + 7 + 6 -> 2 + 6 = 8)
-print(f(13115, True))  # Expected output: 0 (1 + 3 + 1 + 1 + 5 -> no even digits)
+def main():
+    # Testujemy funkcję f() z różnymi danymi
+    print(f(3124, True))   # Powinno dać wynik: 6 (bo 2 + 4 = 6)
+    print(f(3124, False))  # Powinno dać wynik: 4 (bo 3 + 1 = 4)
+    print(f(20576, False)) # Powinno dać wynik: 12 (bo 5 + 7 = 12)
+    print(f(20576, True))  # Powinno dać wynik: 8 (bo 2 + 6 = 8)
+    print(f(13115, True))  # Powinno dać wynik: 0 (bo nie ma cyfr parzystych)
+
+# Jeśli uruchamiamy skrypt bezpośrednio, to wywołujemy main()
+if __name__ == "__main__":
+    main()

@@ -1,28 +1,33 @@
 def f(detector: str) -> bool:
     """
-    Returns True if at least 3 people were in the room at the same time, otherwise False.
+    Zwraca True, jeśli przynajmniej 3 osoby były jednocześnie w pokoju, w przeciwnym razie False.
 
-    Args:
-        detector (str): A string representing people entering ('+') and leaving ('-') the room.
+    Argumenty:
+        detector (str): Ciąg znaków reprezentujący wejścia ('+') i wyjścia ('-') z pokoju.
 
-    Returns:
-        bool: True if at least 3 people were in the room at the same time, False otherwise.
+    Zwraca:
+        bool: True, jeśli przynajmniej 3 osoby były jednocześnie w pokoju, False w przeciwnym razie.
     """
-    count = 0
+    count = 0  # Licznik osób w pokoju
     for event in detector:
-        if event == '+':
+        if event == '+':  # Jeśli ktoś wchodzi, zwiększamy licznik
             count += 1
-        elif event == '-':
+        elif event == '-':  # Jeśli ktoś wychodzi, zmniejszamy licznik
             count -= 1
 
-        # Check if at least 3 people are in the room at the same time
+        # Sprawdzamy, czy w pokoju jest co najmniej 3 osoby
         if count >= 3:
             return True
 
+    # Jeśli nigdy nie było 3 osób jednocześnie, zwracamy False
     return False
 
-# Test cases
-print(f("+-+++-+---"))  # Expected output: True
-print(f("+-+-+-+-"))    # Expected output: False
-print(f("+-++-+--"))     # Expected output: False
-print(f("+-++-++-+---")) # Expected output: True
+def main():
+    print(f("+-+++-+---"))  # wynik: True
+    print(f("+-+-+-+-"))    # wynik: False
+    print(f("+-++-+--"))    # wynik: False
+    print(f("+-++-++-+---")) # wynik: True
+
+# Sprawdzamy, czy uruchamiamy plik jako główny skrypt
+if __name__ == "__main__":
+    main()

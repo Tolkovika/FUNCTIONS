@@ -1,34 +1,38 @@
 def f(n: int) -> int:
     """
-    Returns the n-th prime number.
+    Zwraca n-tą liczbę pierwszą.
 
-    Args:
-        n (int): The position of the prime number to return.
+    Argumenty:
+        n (int): Pozycja liczby pierwszej, którą mamy zwrócić.
 
-    Returns:
-        int: The n-th prime number.
+    Zwraca:
+        int: n-ta liczba pierwsza.
     """
 
     def is_prime(num: int) -> bool:
-        """Helper function to check if a number is prime."""
+        """Funkcja pomocnicza do sprawdzania, czy liczba jest liczbą pierwszą."""
         if num <= 1:
-            return False
-        for i in range(2, int(num ** 0.5) + 1):
-            if num % i == 0:
+            return False  # Liczby mniejsze lub równe 1 nie są pierwsze
+        for i in range(2, int(num ** 0.5) + 1):  # Sprawdzamy dzielniki do pierwiastka z num
+            if num % i == 0:  # Jeśli num dzieli się przez i, to nie jest liczbą pierwszą
                 return False
-        return True
+        return True  # Liczba jest pierwsza
 
-    count = 0
-    num = 1
+    count = 0  # liczymy liczbę pierwszych
+    num = 1  # początkowa liczba
 
-    # Keep finding prime numbers until we reach the n-th one
+    # Dopóki nie znajdziemy n-tej liczby pierwszej
     while count < n:
-        num += 1
-        if is_prime(num):
-            count += 1
+        num += 1  # zwiększamy liczbę
+        if is_prime(num):  # sprawdzamy czy jest liczbą pierwszą
+            count += 1  # jeśli jest pierwsza zwiększamy licznik
 
-    return num
+    return num  # Zwracamy n-tą liczbę pierwszą
 
+def main():
+    print(f(1))  #wynik: 2 (pierwsza liczba pierwsza)
+    print(f(5))  #wynik: 11 (piąta liczba pierwsza)
 
-print(f(1))  # Expected output: 2
-print(f(5))  # Expected output: 11
+# Sprawdzamy, czy skrypt jest uruchamiany jako główny program
+if __name__ == "__main__":
+    main()

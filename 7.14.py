@@ -1,32 +1,41 @@
 def f(number1: float, number2: float, operator: str) -> float:
     """
-    Performs an arithmetic operation on two numbers based on the given operator.
+    Wykonuje operację arytmetyczną na dwóch liczbach w oparciu o podany operator.
 
-    Args:
-        number1 (float): The first number.
-        number2 (float): The second number.
-        operator (str): The arithmetic operator (+, -, *, %, **).
+    Argumenty:
+        number1 (float): Pierwsza liczba.
+        number2 (float): Druga liczba.
+        operator (str): Operator arytmetyczny (+, -, *, %, **).
 
-    Returns:
-        float: The result of the arithmetic operation.
+    Zwraca:
+        float: Wynik operacji arytmetycznej.
     """
+    # Dodawanie
     if operator == "+":
         return number1 + number2
+    # Odejmowanie
     elif operator == "-":
         return number1 - number2
+    # Mnożenie
     elif operator == "*":
         return number1 * number2
+    # Modulo (reszta z dzielenia)
     elif operator == "%":
         return number1 % number2
+    # Potęgowanie
     elif operator == "**":
         return number1 ** number2
+    # Obsługa nieobsługiwanego operatora
     else:
-        raise ValueError("Unsupported operator. Use one of +, -, *, %, **.")
+        raise ValueError("Nieobsługiwany operator. Użyj jednego z +, -, *, %, **.")
 
+def main():
+    print(f(2, 3, "+"))   # wynik: 5
+    print(f(2, 3, "%"))   # wynik: 2
+    print(f(2, 3, "**"))  # wynik: 8
+    print(f(2, 3, "*"))   # wynik: 6
+    print(f(2, 3, "-"))   # wynik: -1
 
-# Test cases
-print(f(2, 3, "+"))   # Expected output: 5
-print(f(2, 3, "%"))   # Expected output: 2
-print(f(2, 3, "**"))  # Expected output: 8
-print(f(2, 3, "*"))   # Expected output: 6
-print(f(2, 3, "-"))   # Expected output: -1
+# Sprawdzamy, czy uruchamiamy plik jako główny skrypt
+if __name__ == "__main__":
+    main()

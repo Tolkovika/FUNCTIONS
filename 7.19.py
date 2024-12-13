@@ -1,27 +1,35 @@
 from collections import Counter
 
-
 def f(number: int) -> int:
     """
-    Returns the sum of repeated digits in the given number.
+    Zwraca sumę powtarzających się cyfr w danej liczbie.
 
-    Args:
-        number (int): The number to check for repeated digits.
+    Argumenty:
+        number (int): Liczba, w której mają zostać znalezione powtarzające się cyfry.
 
-    Returns:
-        int: The sum of repeated digits.
+    Zwraca:
+        int: Suma powtarzających się cyfr.
     """
-    # Convert the number to a string to easily iterate through its digits
+    # Konwertujemy liczbę na ciąg znaków, aby łatwiej przejść przez jej cyfry
     str_number = str(number)
 
-    # Count the frequency of each digit
+    # Liczymy, ile razy każda cyfra występuje
     digit_count = Counter(str_number)
 
-    # Calculate the sum of repeated digits
+    # Obliczamy sumę powtarzających się cyfr (czyli tych, które występują więcej niż raz)
     sum_repeated_digits = sum(int(digit) * count for digit, count in digit_count.items() if count > 1)
 
     return sum_repeated_digits
 
-print(f(1027))        # Expected output: 0 (no repeated digits)
-print(f(230335))      # Expected output: 9 (3 + 3 + 3)
-print(f(513553007))   # Expected output: 21 (5 + 5 + 3 + 3 + 0 + 0)
+def main():
+    print(f(1027))        # wynik: 0 (brak powtarzających się cyfr)
+    print(f(230335))      # wynik: 9 (3 + 3 + 3)
+    print(f(513553007))   # wynik: 21 (5 + 5 + 3 + 3 + 0 + 0)
+
+# Sprawdzamy, czy skrypt jest uruchamiany jako główny program
+if __name__ == "__main__":
+    main()
+
+
+
+

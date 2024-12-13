@@ -1,17 +1,24 @@
 def f(sentence: str) -> str:
     """
-    Returns the sentence with spaces removed.
+    Zwraca zdanie bez spacji.
 
-    Args:
-        sentence (str): The sentence from which to remove spaces.
+    Argumenty:
+        sentence (str): Zdanie, z którego mają zostać usunięte spacje.
 
-    Returns:
-        str: The sentence without spaces.
+    Zwraca:
+        str: Zdanie bez spacji.
     """
+    # Usuwamy wszystkie spacje w zdaniu
     return sentence.replace(" ", "")
 
-print(f("integrated development environment"))
-# Expected output: "integrateddevelopmentenvironment"
+def main():
+    # Testowanie funkcji
+    print(f("integrated development environment"))  
+    #wynik: "integrateddevelopmentenvironment"
 
-print(f("A programming language is a system of notation for writing computer programs"))
-# Expected output: "Aprogramminglanguageisasystemofnotationforwritingcomputerprograms"
+    print(f("A programming language is a system of notation for writing computer programs"))  
+    #wynik: "Aprogramminglanguageisasystemofnotationforwritingcomputerprograms"
+
+# Sprawdzamy, czy skrypt jest uruchamiany jako główny program
+if __name__ == "__main__":
+    main()

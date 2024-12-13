@@ -1,16 +1,23 @@
 def f(binary_number: str) -> bool:
     """
-    Checks if the given string is a valid binary number.
+    Sprawdza, czy podany ciąg znaków jest poprawnym liczba binarną.
 
-    Args:
-        binary_number (str): The string to check.
+    Argumenty:
+        binary_number (str): Ciąg znaków do sprawdzenia.
 
-    Returns:
-        bool: True if the string is a valid binary number, False otherwise.
+    Zwraca:
+        bool: True, jeśli ciąg jest poprawną liczbą binarną, False w przeciwnym razie.
     """
     return binary_number != "" and all(char in "01" for char in binary_number)
 
-print(f("101101"))       # True
-print(f("1311a10100"))   # False
-print(f("001010"))       # True
-print(f(""))             # False
+def main():
+    # Testowanie funkcji f()
+    print(f("101101"))       # True
+    print(f("1311a10100"))   # False
+    print(f("001010"))       # True
+    print(f(""))             # False
+
+# Dodanie warunku uruchamiania programu
+if __name__ == "__main__":
+    main()
+
