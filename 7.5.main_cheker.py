@@ -1,10 +1,20 @@
-from range_checker import is_in_range
+# Importujemy funkcję z modułu
+from card_utils import hide
 
-number = int(input("A number: "))
-x = 2
-y = 15
 
-if is_in_range(number, x, y):
-    print(f"Number {number} in the range <{x},{y}>: yes")
-else:
-    print(f"Number {number} in the range <{x},{y}>: no")
+def main():
+    # Przykładowy numer karty kredytowej
+    card_number = "5290312400019022"
+
+    try:
+        # Maskowanie numeru karty
+        masked_card = hide(card_number)
+        print(f"Zamaskowany numer karty: {masked_card}")
+    except ValueError as e:
+        # Obsługa błędu, jeśli wystąpi
+        print(f"Błąd: {e}")
+
+
+# Uruchamiamy main(), jeśli skrypt jest uruchomiony bezpośrednio
+if __name__ == "__main__":
+    main()

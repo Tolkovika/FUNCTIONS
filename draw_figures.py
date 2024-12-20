@@ -3,50 +3,34 @@
 import turtle
 from figures import draw_square, draw_triangle, draw_rectangle
 
-# Ustawienie ekranu
 window = turtle.Screen()
-window.bgcolor("lightgreen")  # Ustawiamy tło na zielone
+window.bgcolor("lightgreen")
 
-# Tworzymy żółwia
 pen = turtle.Turtle()
-pen.speed(5)  # Ustawiamy prędkość rysowania
+pen.speed(5)
 
-# Rysowanie kwadratu w pierwszej lokalizacji
-pen.penup()  # Podnosimy pióro, aby żółw się przemieszczał bez rysowania
-pen.goto(-100, 100)  # Przemieszczamy żółwia do nowego miejsca
-pen.pendown()  # Kładziemy pióro, aby zaczynać rysować
-draw_square(100)  # Rysujemy kwadrat o boku 100
+def move_pen(pen: turtle.Turtle, x: float, y: float):
+    pen.penup()
+    pen.goto(x, y)
+    pen.pendown()
 
-# Rysowanie kwadratu w drugiej lokalizacji
-pen.penup()
-pen.goto(100, 100)  # Nowa lokalizacja
-pen.pendown()
-draw_square(100)  # Rysujemy drugi kwadrat
+move_pen(pen, -150, 100)
+draw_square(pen, 100)
 
-# Rysowanie trójkąta w pierwszej lokalizacji
-pen.penup()
-pen.goto(-100, -50)  # Nowa lokalizacja
-pen.pendown()
-draw_triangle(100)  # Rysujemy trójkąt
+move_pen(pen, 100, 100)
+draw_square(pen, 50)
 
-# Rysowanie trójkąta w drugiej lokalizacji
-pen.penup()
-pen.goto(100, -50)  # Nowa lokalizacja
-pen.pendown()
-draw_triangle(100)  # Rysujemy drugi trójkąt
+move_pen(pen, -150, -50)
+draw_triangle(pen, 100)
 
-# Rysowanie prostokąta w pierwszej lokalizacji
-pen.penup()
-pen.goto(-100, -200)  # Nowa lokalizacja
-pen.pendown()
-draw_rectangle(150, 80)  # Rysujemy prostokąt o bokach 150 i 80
+move_pen(pen, 100, -50)
+draw_triangle(pen, 50)
 
-# Rysowanie prostokąta w drugiej lokalizacji
-pen.penup()
-pen.goto(100, -200)  # Nowa lokalizacja
-pen.pendown()
-draw_rectangle(150, 80)  # Rysujemy drugi prostokąt
+move_pen(pen, -150, -200)
+draw_rectangle(pen, 120, 80)
 
-# Ukrywamy żółwia i kończymy
+move_pen(pen, 100, -200)
+draw_rectangle(pen, 80, 40)
+
 pen.hideturtle()
-window.mainloop()  # Uruchamiamy główną pętlę programu, aby okno pozostało otwarte
+window.mainloop()
