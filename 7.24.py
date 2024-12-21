@@ -13,16 +13,14 @@ def f(expression: str) -> int:
     """
     # sprawdzamy, czy wszystkie znaki w wyrażeniu są cyframi lub operatorami +, -
     if all(c.isdigit() or c in '+-' for c in expression):
-        return eval(expression)  # Oblicz i zwróć wynik wyrażenia
+        return eval(expression)  # oblicz i zwróć wynik wyrażenia
     else:
-        raise ValueError("Invalid expression")  # Jeśli wyrażenie zawiera niepoprawne znaki, zgłaszamy błąd
+        raise ValueError("Invalid expression")  # jesli wyrażenie zawiera niepoprawne znaki zgłaszamy błąd
 
 def main():
     print(f("2+3"))        # wynik: 5
     print(f("3+8+1"))      # wynik: 12
     print(f("2+3-4+5-0"))  # wynik: 6
 
-# Sprawdzamy, czy skrypt jest uruchamiany jako główny program
 if __name__ == "__main__":
     main()
-  

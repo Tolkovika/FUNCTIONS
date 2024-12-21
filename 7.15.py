@@ -8,18 +8,18 @@ def f(detector: str) -> bool:
     Zwraca:
         bool: True, jeśli przynajmniej 3 osoby były jednocześnie w pokoju, False w przeciwnym razie.
     """
-    count = 0  # Licznik osób w pokoju
+    count = 0  # licznik osób w pokoju
     for event in detector:
-        if event == '+':  # Jeśli ktoś wchodzi, zwiększamy licznik
+        if event == '+':  # jeśli ktoś wchodzi, zwiększamy licznik
             count += 1
-        elif event == '-':  # Jeśli ktoś wychodzi, zmniejszamy licznik
+        elif event == '-':  # jeśli ktoś wychodzi, zmniejszamy licznik
             count -= 1
 
-        # Sprawdzamy, czy w pokoju jest co najmniej 3 osoby
+        # sprawdzamy, czy w pokoju jest co najmniej 3 osoby
         if count >= 3:
             return True
-
-    # Jeśli nigdy nie było 3 osób jednocześnie, zwracamy False
+    
+    # jeśli warunek nie został spełniony, zwróć False
     return False
 
 def main():
@@ -28,6 +28,5 @@ def main():
     print(f("+-++-+--"))    # wynik: False
     print(f("+-++-++-+---")) # wynik: True
 
-# Sprawdzamy, czy uruchamiamy plik jako główny skrypt
 if __name__ == "__main__":
     main()

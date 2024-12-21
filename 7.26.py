@@ -12,11 +12,10 @@ def f(text: str) -> str:
     return '-'.join(text) if text else ""  # lączymy znaki myślnikami, jeśli tekst nie jest pusty, w przeciwnym razie zwracamy pusty ciąg.
 
 def main():
-    print(f("University"))  # wynik: U-n-i-v-e-r-s-i-t-y
-    print(f("UE"))          # wynik: U-E
-    print(f("x"))           # wynik: x
-    print(f(""))            # wynik: "" pusty ciąg
+    print(f("University"))  
+    print(f("UE"))          
+    print(f("x"))           
+    print(f(""))           
 
-# Sprawdzamy, czy skrypt jest uruchamiany jako główny program
 if __name__ == "__main__":
     main()

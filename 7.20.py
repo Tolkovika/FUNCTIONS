@@ -21,18 +21,17 @@ def f(n: int) -> int:
     count = 0  # liczymy liczbę pierwszych
     num = 1  # początkowa liczba
 
-    # Dopóki nie znajdziemy n-tej liczby pierwszej
+    # dopóki nie znajdziemy n-tej liczby pierwszej
     while count < n:
         num += 1  # zwiększamy liczbę
         if is_prime(num):  # sprawdzamy czy jest liczbą pierwszą
             count += 1  # jeśli jest pierwsza zwiększamy licznik
 
-    return num  # Zwracamy n-tą liczbę pierwszą
+    return num  # zwracamy n liczbę pierwszą
 
 def main():
-    print(f(1))  #wynik: 2 (pierwsza liczba pierwsza)
-    print(f(5))  #wynik: 11 (piąta liczba pierwsza)
+    print(f(1))  #pierwsza liczba pierwsza
+    print(f(5))  #piąta liczba pierwsza
 
-# Sprawdzamy, czy skrypt jest uruchamiany jako główny program
 if __name__ == "__main__":
     main()

@@ -1,22 +1,21 @@
 import turtle
 
-def draw_square(pen: turtle.Turtle, length: float):
+def draw_square(length):
     """Rysuje kwadrat o podanej długości boku."""
     for _ in range(4):
-        pen.forward(length)  # Rysowanie boku
-        pen.right(90)        # Obrót o 90 stopni w prawo
+        turtle.forward(length)
+        turtle.right(90)
 
-def draw_triangle(pen: turtle.Turtle, length: float):
-    """Rysuje trójkąt równoramienny o podanej długości boku."""
+def draw_triangle(length):
+    """Rysuje trójkąt równoboczny o podanej długości boku."""
     for _ in range(3):
-        pen.forward(length)  # Rysowanie boku
-        pen.left(120)        # Obrót o 120 stopni w lewo
+        turtle.forward(length)
+        turtle.left(120)
 
-def draw_rectangle(pen: turtle.Turtle, length_a: float, length_b: float):
-    """Rysuje prostokąt o podanych długościach boków a i b."""
+def draw_rectangle(length_a, length_b):
+    """Rysuje prostokąt o bokach length_a i length_b."""
     for _ in range(2):
-        pen.forward(length_a)  # Dłuższy bok
-        pen.right(90)          # Obrót o 90 stopni w prawo
-        pen.forward(length_b)  # Krótszy bok
-        pen.right(90)          # Obrót o 90 stopni w prawo
-
+        turtle.forward(length_a)
+        turtle.right(90)
+        turtle.forward(length_b)
+        turtle.right(90)

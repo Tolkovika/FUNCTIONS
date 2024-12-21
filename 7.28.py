@@ -24,11 +24,10 @@ def f(dice: str) -> int:
     return max_streak  # zwracamy długość najdłuższej sekwencji powtarzających się cyfr
 
 def main():
-    print(f("5233165554211"))  # Oczekiwany wynik: 3 (Sekwencja "555")
-    print(f("2133"))           # Oczekiwany wynik: 2 (Sekwencja "33")
-    print(f("1234"))           # Oczekiwany wynik: 1 (Brak powtarzających się cyfr)
-    print(f("77777"))          # Oczekiwany wynik: 5 (Sekwencja "77777")
+    print(f("5233165554211"))  
+    print(f("2133"))          
+    print(f("1234"))           
+    print(f("77777"))          
 
-# Sprawdzamy, czy skrypt jest uruchamiany jako główny program
 if __name__ == "__main__":
     main()

@@ -19,12 +19,10 @@ def f(product_code: str) -> bool:
     return False
 
 def main():
-    print(f("1082"))  # wynik: True, ponieważ 1+0+8 = 9, 9 % 7 = 2 
-    print(f("2035"))  # wynik: False
-    print(f("1114"))  # wynik: True, ponieważ 1+1+1 = 3, 3 % 7 = 3 
-    print(f("7071"))  # wynik: False
-
-# Sprawdzamy, czy skrypt jest uruchamiany jako główny program
+    print(f("1082"))  
+    print(f("2035"))  
+    print(f("1114"))  
+    print(f("7071"))  
 if __name__ == "__main__":
     main()
 

@@ -16,15 +16,11 @@ def f(password: str) -> bool:
     return False
 
 def main():
-    print(f("ax15"))       # wynik: False (hasło ma mniej niż 6 znaków)
-    print(f("book123"))    # wynik: True (ma co najmniej 6 znaków i unikalne znaki)
-    print(f("A2water3"))   # wynik: True (ma co najmniej 6 znaków i unikalne znaki)
-    print(f("qwerty"))     # wynik: False (powtarza się 'y')
-    print(f(""))           # wynik: False (hasło jest puste)
+    print(f("ax15"))       
+    print(f("book123"))    
+    print(f("A2water3"))   
+    print(f("qwerty"))     
+    print(f(""))           
 
-# Sprawdzamy, czy skrypt jest uruchamiany jako główny program
 if __name__ == "__main__":
     main()
-
-
-   

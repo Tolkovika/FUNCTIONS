@@ -1,10 +1,10 @@
 import math
 def triangle_area(a, b, c):
     """
-    Funkcja oblicza pole trójkąta na podstawie długości jego boków
+    funkcja oblicza pole trójkąta na podstawie długości jego boków
     za pomocą wzoru Herona.
 
-    Argumenty:
+    argumenty:
     a (float): Długość pierwszego boku trójkąta
     b (float): Długość drugiego boku trójkąta
     c (float): Długość trzeciego boku trójkąta
